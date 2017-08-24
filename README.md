@@ -1,9 +1,13 @@
 # node-exercise
 A little exercise using a Star Wars API [https://swapi.co/](https://swapi.co/)
 
-## Goal
-Make a small express server with endpoints centered around Star Wars. 
+## Task
+An express server with endpoints functions with api [https://swapi.co/](https://swapi.co/)
 This will hopefully demonstrate to us abilities to make an express app, consume data from an API, and manipulate that data into some desired way
+
+##Run
+Move to root directory where the app.js is located
+Type npm start from your console or terminal 
 
 ## Requirements
 * Make an express server with at least the endpoints listed below
