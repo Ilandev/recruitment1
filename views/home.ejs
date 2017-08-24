@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <base href="/">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+Cloud Boost
+  </h1>
+  
+</div>
+<h2></h2>
+<div class="container">
+<div class="jumbotron">
+<h1>Interview</h1>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="container">
+<div class="col-md-12">
+
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+<div class="col-md-2">
+<th>Name</th>
+</div>
+<div class="col-md-2">
+<th>Height</th>
+</div>
+<div class="col-md-2">
+<th>Mass</th>
+</div>
+<div class="col-md-2">
+<th>Hair color</th>
+</div>
+<div class="col-md-2">
+<th>Eye color</th>
+</div>
+<div class="col-md-2">
+<th>Gender</th>
+</div>
+
+</thead>
+<tbody>
+
+<% people.forEach(function(person){ %>
+
+<tr >
+<div class="col-md-2">
+<td><%= person.name %></td>
+</div>
+<div class="col-md-2">
+<td><%= person.height %></td>
+</div>
+<div class="col-md-2">
+<td><%= person.mass %></td>
+</div>
+<div class="col-md-2">
+<td><%= person.hair_color %></td>
+</div>
+<div class="col-md-2">
+<td><%= person.eye_color %></td>
+</div>
+<div class="col-md-2">
+<td><%= person.gender %></td>
+</div>
+<% })  %>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+</div>
+</div>
+
+
+<body>
+
+</body>
+</html>
