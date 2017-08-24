@@ -68,45 +68,51 @@ app.get('/characters',(req,res)=>{
 	})
 })
 
-app.get('/planets',(req,res)=>{
-	var planetDetails = {}'
+app.get('/planetresidents',(req,res)=>{
+	var planetDetails = {};
 	var async  = require('async');
 	var fetchNames = function(cb1){
 		
 	request('https://swapi.co/api/planets/',function(err,resp,body){
+		
+		if(err)
+			res.end('err1'+err);
 		var obj = JSON.parse(body)
+		console.log(obj.results);
 		var func = function(planet,cb)
 		{
-			
+			var planetname = planet.name;
+			planetDetails[planetname]=[];
 			var residents = function(resident,cb2)
 			{
 				request(resident,function(err,resp,body){
+					console.log(body);
 					if(err)
 						cb2(null);
 					else{
 						var resid = JSON.parse(body);
+						planetDetails[planetname].push(resid.name);
+						cb2(null);
 						
 					}
 				})
 				
 			}
 			async.eachSeries(planet.residents,residents,function(err){
-				
+			cb(null);	
 			})
 			
-			cb(null);
+			
 		}
 		async.eachSeries(obj.results,func,function(err){
 			
-		cb1(obj.results)	
+		cb1(planetDetails)	
 		})
 		
 	})
 	}
 	fetchNames(function(obbb){
-		var arr = [];
-		arr.push(obbb)
-	
-		res.render('home.ejs', { people: obbb })
+		console.log(obbb)
+		res.end('details'+JSON.stringify(obbb))
 	})
 })
